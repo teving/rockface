@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using RockFace.Core.Location;
 
 namespace RockFace.Core.DummyData
@@ -10,9 +11,9 @@ namespace RockFace.Core.DummyData
             new LocationListItemDto(2, "Building One")
         };
 
-        public IEnumerable<LocationListItemDto> GetAllLocationListItems()
+        public Task<IEnumerable<LocationListItemDto>> GetAllLocationListItems()
         {
-            return Locations;
+            return Task<IEnumerable<LocationListItemDto>>.Factory.StartNew(() => Locations);
         }
     }
 }

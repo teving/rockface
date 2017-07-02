@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace RockFace.Core.Location
 {
-    interface ILocationRepository
+    public interface ILocationRepository
     {
-        IEnumerable<LocationListItemDto> GetAllLocationListItems();
+        Task<IEnumerable<LocationListItemDto>> GetAllLocationListItems();
     }
 }
