@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockFace.Core", "RockFace.Core\RockFace.Core.csproj", "{9B0F3B8A-4D16-480A-9128-6C5720E2498D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockFace.Core", "RockFace.Core\RockFace.Core.csproj", "{9B0F3B8A-4D16-480A-9128-6C5720E2498D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockFace.Core.Tests", "RockFace.Core.Tests\RockFace.Core.Tests.csproj", "{CFFDC79F-F591-457C-9DE9-7DB1AAD59A43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockFace.Core.Tests", "RockFace.Core.Tests\RockFace.Core.Tests.csproj", "{CFFDC79F-F591-457C-9DE9-7DB1AAD59A43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockFace.Service", "RockFace.Service\RockFace.Service.csproj", "{6086F4FC-2D2F-4FCA-897F-123E3876B3B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CFFDC79F-F591-457C-9DE9-7DB1AAD59A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFFDC79F-F591-457C-9DE9-7DB1AAD59A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFFDC79F-F591-457C-9DE9-7DB1AAD59A43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6086F4FC-2D2F-4FCA-897F-123E3876B3B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6086F4FC-2D2F-4FCA-897F-123E3876B3B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6086F4FC-2D2F-4FCA-897F-123E3876B3B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6086F4FC-2D2F-4FCA-897F-123E3876B3B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
