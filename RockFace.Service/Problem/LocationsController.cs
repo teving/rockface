@@ -8,24 +8,24 @@ namespace RockFace.Service.Problem
     [Route("api/locations")]
     public class LocationsController : Controller
     {
-        private readonly ILocationRepository repository;
+        private readonly LocationProvider provider;
 
-        public LocationsController(ILocationRepository repository)
+        public LocationsController(LocationProvider provider)
         {
-            this.repository = repository;
+            this.provider = provider;
         }
 
         [HttpGet]
         public async Task<IEnumerable<LocationListItemDto>> Get()
         {
-            return await repository.GetAllLocationListItems();
+            return await provider.GetAllLocations();
         }
 
         [HttpGet]
         [Route("{id}")]
         public async Task<LocationDetailsItemDto> Get(int id)
         {
-            return await repository.GetLocationDetails(id);
+            return await provider.GetDetailsById(id);
         }
     }
 }
