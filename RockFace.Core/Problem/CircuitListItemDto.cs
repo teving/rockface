@@ -23,19 +23,19 @@ namespace RockFace.Core.Problem
                     return "";
                 }
 
-                if (MinimumGrade != null)
+                if (MinimumGrade == null)
                 {
-                    if (MaximumGrade != null)
-                    {
-                        return MinimumGrade != MaximumGrade
-                            ? $"{MinimumGrade}-{MaximumGrade}"
-                            : MinimumGrade.ToString();
-                    }
-
-                    return MinimumGrade.ToString();
+                    return MaximumGrade.ToString();
                 }
 
-                return MaximumGrade.ToString();
+                if (MaximumGrade != null)
+                {
+                    return !Equals(MinimumGrade, MaximumGrade)
+                        ? $"{MinimumGrade}-{MaximumGrade}"
+                        : MinimumGrade.ToString();
+                }
+
+                return MinimumGrade.ToString();
             }
         }
 
