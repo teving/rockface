@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using RockFace.Service.Config;
+using StructureMap;
 
 namespace RockFace.Service
 {
@@ -25,10 +27,19 @@ namespace RockFace.Service
         public IConfigurationRoot Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddMvc();
+            services.AddMvc().AddControllersAsServices();
+
+            var container = new Container();
+            container.Configure(config =>
+            {
+                config.AddRegistry(new SystemWideIoCRegistry());
+                config.Populate(services);
+            });
+
+            return container.GetInstance<IServiceProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
