@@ -1,0 +1,19 @@
+{
+  "name": "rockface",
+  "version": "0.0.1",
+  "description": "Bouldering tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teving/rockface.git"
+  },
+  "author": "kgurton",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/teving/rockface/issues"
+  },
+  "homepage": "https://github.com/teving/rockface#readme"
+}
