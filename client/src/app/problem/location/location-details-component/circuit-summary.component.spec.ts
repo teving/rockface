@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { LocationCircuitSummary } from '../location-circuit-summary.model';
 import { CircuitSummaryComponent } from './circuit-summary.component';
 
-describe('LocationDetailsComponent', () => {
+describe('CircuitSummaryComponent', () => {
    beforeEach(async(() => {
       TestBed.configureTestingModule({
          declarations: [CircuitSummaryComponent]
