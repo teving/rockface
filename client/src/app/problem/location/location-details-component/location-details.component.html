@@ -2,7 +2,7 @@
 <section>
    <ul>
       <li *ngFor="let circuit of (location | async)?.circuits">
-         {{circuit.colour || circuit.description }} - {{circuit.gradeDescription}}
+         <rf-circuit-summary [circuit]="circuit"></rf-circuit-summary>
       </li>
    </ul>
 </section>
