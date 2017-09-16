@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import "rxjs/add/operator/share";
+import 'rxjs/add/operator/switchMap';
 
 import { LocationProvider } from '../location-provider.service';
 import { LocationDetails } from '../location-details.model';
@@ -12,9 +14,11 @@ import { LocationDetails } from '../location-details.model';
 export class LocationDetailsComponent implements OnInit {
    location: Observable<LocationDetails>;
 
-   constructor(private locationProvider: LocationProvider) { }
+   constructor(private route: ActivatedRoute, private locationProvider: LocationProvider) { }
 
    ngOnInit(): void {
-      this.location = this.locationProvider.getById(1).share();
+      this.location = this.route.params.switchMap(params =>
+         this.locationProvider.getById(+params.id)
+      ).share();
    }
 }

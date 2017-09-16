@@ -10,12 +10,12 @@ import { LocationListItemComponent } from './location-list-item.component';
 
 describe('LocationListComponent', () => {
    beforeEach(async(() => {
-      this.locationProvider = {
+      const locationProvider = {
          getAll(): Observable<LocationListItem[]> { return Observable.of([]); }
       };
 
       TestBed.configureTestingModule({
-         providers: [{ provide: LocationProvider, useValue: this.locationProvider }],
+         providers: [{ provide: LocationProvider, useValue: locationProvider }],
          declarations: [
             LocationListComponent,
             LocationListItemComponent
@@ -27,18 +27,19 @@ describe('LocationListComponent', () => {
    beforeEach(() => {
       this.fixture = TestBed.createComponent(LocationListComponent);
       this.component = this.fixture.componentInstance;
-      this.fixture.detectChanges();
    });
 
    describe('onInit', () => {
-      it('should create a LocationListItem component for each location', () => {
-         const locations = [{}, {}, {}];
+      beforeEach(() => {
+         this.locations = [{}, {}, {}];
          const locationProvider = this.fixture.debugElement.injector.get(LocationProvider);
-         spyOn(locationProvider, 'getAll').and.returnValue(Observable.of(locations));
+         spyOn(locationProvider, 'getAll').and.returnValue(Observable.of(this.locations));
 
          this.component.ngOnInit();
          this.fixture.detectChanges();
+      });
 
+      it('should create a LocationListItem component for each location', () => {
          const childComponents = this.fixture.debugElement.queryAll(By.directive(LocationListItemComponent));
          expect(childComponents.length).toBe(3);
       });
