@@ -31,6 +31,7 @@ namespace RockFace.Service
         {
             // Add framework services.
             services.AddMvc().AddControllersAsServices();
+            services.AddCors();
 
             var container = new Container();
             container.Configure(config =>
@@ -48,6 +49,7 @@ namespace RockFace.Service
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200"));
             app.UseMvc();
         }
     }

@@ -1,12 +1,12 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { LocationConfig } from './config/location.config';
 
 @NgModule({
-   imports: [HttpClient],
-   exports: [LocationConfig]
+   imports: [HttpClientModule],
+   providers: [LocationConfig]
 })
 export class CoreModule {
    constructor( @SkipSelf() @Optional() coreModule: CoreModule) {

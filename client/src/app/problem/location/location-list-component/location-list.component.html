@@ -1,0 +1,5 @@
+<ul>
+   <li *ngFor="let location of locations | async">
+      <rf-location-list-item [location]="location"></rf-location-list-item>
+   </li>
+</ul>
