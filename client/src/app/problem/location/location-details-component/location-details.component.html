@@ -1,0 +1,8 @@
+<h2>{{(location | async)?.name}}</h2>
+<section>
+   <ul>
+      <li *ngFor="let circuit of (location | async)?.circuits">
+         {{circuit.colour || circuit.description }} - {{circuit.gradeDescription}}
+      </li>
+   </ul>
+</section>
