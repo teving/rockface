@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using RockFace.Core.Base;
 
 namespace RockFace.Core.Problem
